@@ -81,6 +81,11 @@ Do not add another index, state files, reports, or placeholder documents for
 later stages. A small feature may have one stage described in the conversation
 or PR, without a new specification.
 
+When `feature-loop` coordinates delivery, it may keep a compact execution
+checkpoint in this specification and evidence in the existing stage documents.
+The coordinator owns these shared updates; delegated planning returns proposed
+changes. Follow its coordination contract without duplicating the backlog.
+
 After implementation, check whether new evidence changes the plan. Update
 related contracts and stages together while preserving IDs; use P04a and P04b
 when splitting a stage, for example. Bring material changes to scope or behavior

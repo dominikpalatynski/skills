@@ -40,3 +40,5 @@ feature that apply to this stage. Distinguish code, deployment, and verification
 in the target environment. State when implementation of the stage is complete
 and what remains for the user to assess. Execution results and outstanding
 items belong in the PR or conversation summary.
+When Feature Loop coordinates delivery, it may record results and evidence here;
+the coordinator owns those updates and the shared execution checkpoint.

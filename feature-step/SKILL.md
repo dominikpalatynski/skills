@@ -36,6 +36,14 @@ Start by stating the current goal, finish line, and first action. Keep one stage
 active. Reconstruct progress from code, git, the stage document, and the existing
 PR; do not add mandatory execution plans or separate files for resuming work.
 
+When delegated by `feature-loop`, use its assigned workspace, base, write scope,
+and verification contract. Keep one stage active per worker and return the
+result to the coordinator. The coordinator owns shared documents, review
+dispatch, integration, and subsequent stages. Its agreed integration strategy
+replaces the default PR/merge handoff; do not spawn further agents or independently
+publish work. The coordinator records evidence in the existing stage document
+or PR and maintains the loop checkpoint.
+
 ## Implement
 
 Before adding persisted state, an abstraction, or a recovery mechanism, ask what
