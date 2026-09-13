@@ -1,0 +1,3 @@
+interface:
+  display_name: "Feature Plan"
+  short_description: "Plan a feature in small, verifiable stages"

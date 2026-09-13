@@ -1,0 +1,3 @@
+interface:
+  display_name: "Feature Step"
+  short_description: "Implement one stage and demonstrate the result"
