@@ -38,15 +38,25 @@ PR; do not add mandatory execution plans or separate files for resuming work.
 
 ## Implement
 
-Implement the scope together with meaningful failure handling. Make routine
+Before adding persisted state, an abstraction, or a recovery mechanism, ask what
+current behavior would fail without it. Prefer a direct implementation using
+existing state and configuration; add future consumers' machinery with those
+consumers. Preserve the current operation's authorization, integrity, and resource
+bounds. Safe rejection with an explicit retry may satisfy the contract without
+automatic recovery. If the specification itself demands unnecessary machinery,
+propose a concrete simplification before building it; do not silently omit an
+accepted requirement.
+
+Implement the scope together with the required failure guarantees. Make routine
 technical decisions and fixes independently. Return to the user when new evidence
 requires a material change to product behavior, a shared contract, or scope.
 Prepare a concrete recommendation; continue independent work already agreed upon.
 
-If the stage proves too large, propose the smallest useful split and explain
-what has already been done. Do not silently expand the assignment or declare
-the whole stage complete after implementing only part of it. Keep new ideas
-briefly in "Later" in the existing document or conversation. Update affected
+If the stage proves too large, simplify unnecessary mechanisms before proposing
+the smallest useful split, and explain what has already been done. Do not silently
+expand the assignment or declare the whole stage complete after implementing only
+part of it. Keep new ideas briefly in "Later" in the existing document or
+conversation. Update affected
 decisions and future stages when evidence warrants it, without rewriting the whole plan.
 
 ## Verify

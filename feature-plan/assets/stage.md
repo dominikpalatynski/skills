@@ -13,6 +13,8 @@ One sentence describing what can be run or checked after this stage.
 - Behavior and contracts implemented in this stage.
 - Owner of the change and relevant integration points.
 - What remains outside the stage; links to shared rules instead of copies.
+- Deliberate simplifications and their practical cost, where relevant; what
+  concrete need would justify revisiting them.
 
 ## Implementation steps
 

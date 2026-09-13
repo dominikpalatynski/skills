@@ -5,7 +5,7 @@ description: Create or revise a feature specification and divide it into small s
 
 # Feature Plan
 
-Prepare a complete contract and small implementation scopes the user can
+Define the contract needed for the current scope and small stages the user can
 assess separately. Preserve earlier decisions and user instructions;
 existing material does not require restarting discovery.
 
@@ -23,6 +23,16 @@ existing material does not require restarting discovery.
    availability. An open issue blocks only stages whose scope or credible
    verification depends on it. Prepare the remaining design for review.
 
+For each new persisted field, state, background process, or abstraction, identify
+the current behavior or concrete safety need that requires it. Prefer existing
+state, derived values, and configuration where they suffice; persist facts that
+must survive and cannot be safely reconstructed. Defer machinery whose consumer
+belongs to a later stage. Specify the required failure guarantee before choosing
+a recovery mechanism; automatic recovery is not implied by safe failure handling.
+Record deliberate limitations and their cost in the existing scope or exclusions.
+If simplifying an accepted contract changes behavior, present that trade-off for
+a decision instead of silently weakening the contract.
+
 ## Divide into stages
 
 Each stage has one primary outcome that can be run or checked.
@@ -37,8 +47,9 @@ Name it as a behavior, such as "the file reaches storage", and define its finish
   foundation is a useful stage when it has evidence of working, such as reading
   an object with the correct role and rejecting reads by the wrong role.
 - Split a stage again if its outcome needs several independent demonstrations
-  or too many changes for one review. Do not impose a universal limit on the
-  number of stages, files, diff lines, or working time.
+  or too many changes for one review. First remove unnecessary machinery;
+  dividing the same overbuilt design into more stages does not simplify it.
+  Do not impose a universal limit on stages, fields, files, diff lines, or time.
 - When the breakdown depends on an unknown mechanism, define an investigation
   with a question, a bounded experiment, and evidence. Its result may change the plan.
 - Explain how the stage can merge without prematurely exposing an incomplete

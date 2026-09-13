@@ -27,6 +27,10 @@ additional agents merely to attach an "independent" label.
 
 - Does the goal address the user's need, and are key decisions justified?
   Check ownership boundaries and assumptions about the mechanisms being used.
+- Is each mechanism necessary for a current requirement or concrete safety need?
+  Test a simpler alternative against the same guarantees. Challenge unnecessary
+  complexity inherited from the specification too; smaller stages alone do not
+  fix an overbuilt design. Distinguish safe failure from automatic recovery.
 - Does every part of the scope have an owner and stage, and do dependencies allow
   the stated order? Identify omissions, cycles, and unnecessary scope expansion.
 - Does each stage produce one useful demonstrable outcome without implementing
@@ -40,6 +44,10 @@ additional agents merely to attach an "independent" label.
 
 - Compare the diff with the goal, criteria, and shared contract. Check both
   omissions and scope added without a need.
+- For new persisted state or abstractions, trace the present need beyond their
+  readers: code using a field does not justify the machinery that introduced it.
+  Look for configuration copied into records, redundant facts, and future-only
+  consumers; retain state needed for current integrity and safe recovery.
 - Trace the main path and realistic failures. Examine authorization, durability,
   concurrency, retries, or migration when the change touches those boundaries.
 - Assess tests and evidence. Run useful missing checks when the environment
@@ -57,6 +65,9 @@ a location, concrete scenario, consequence, evidence, and resolution criterion.
 Separate blockers, material fixes, and optional suggestions. Do not manufacture
 findings to fill a list. Label an unconfirmed concern as a question or missing
 evidence rather than presenting it as a discovered defect.
+Require a concrete failure scenario under current supported use or a violated
+accepted requirement for a blocker. Keep speculative hardening optional; report
+simplifications that change accepted guarantees as design proposals with costs.
 
 If there are no findings, say so directly and state the scope and limitations
 of the review. List actual checks and missing evidence. Recommend a verdict

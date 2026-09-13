@@ -18,7 +18,9 @@ over this skill's default workflow.
    Distinguish facts confirmed in the repository from assumptions and recommendations.
 3. Compare viable approaches, including a simpler solution or keeping the current
    behavior when that meets the need. Explain meaningful costs and consequences;
-   recommend an approach.
+   recommend the simplest approach that meets today's supported workflow.
+   Future scale, providers, migrations, or reuse need a concrete requirement;
+   their possibility alone does not justify building support now.
 4. When asked "how exactly?", trace a concrete path: data, owners, calls,
    persisted state, and failure behavior. Use an example or small diagram when
    it helps the user assess the approach. Check current external documentation
@@ -26,6 +28,9 @@ over this skill's default workflow.
 5. Establish the smallest useful scope and what belongs later. Turn an unknown
    that could change the architecture into a specific question to investigate,
    and identify the evidence needed to resolve it.
+   Make acceptable limitations explicit: safe rejection and a fresh attempt or
+   bounded manual recovery may suffice without automatic recovery. Preserve
+   authorization, data integrity, and resource bounds needed by the current flow.
 
 Ask about one meaningful decision at a time, preferably with a recommendation.
 Continue analysis that does not depend on the answer. Resolve routine technical
@@ -37,7 +42,7 @@ a short "Later" section without expanding the current work.
 When the direction is clear enough, assemble concise input for planning:
 
 - the goal and an example of the expected behavior;
-- initial scope and exclusions;
+- initial scope, exclusions, and accepted limitations with their practical cost;
 - the recommended approach, a relevant alternative, and the reason for the choice;
 - confirmed integration points;
 - accepted decisions, proposals, and open questions;
