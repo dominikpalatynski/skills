@@ -1,6 +1,28 @@
 # Skills
 
-Personal agent skills for shaping, planning, implementing, and reviewing features.
+A collection of reusable skills for AI coding agents, organized by workflow.
+
+## Installation
+
+Install all skills with the [Skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add dominikpalatynski/skills --skill '*'
+```
+
+Follow the prompts to choose your agent and installation scope.
+
+To install a specific skill, use its name:
+
+```bash
+npx skills add dominikpalatynski/skills --skill feature-plan
+```
+
+## Skills
+
+### Feature development
+
+Skills for exploring ideas and delivering features in small, verifiable stages.
 
 | Skill | Purpose |
 | --- | --- |
@@ -12,9 +34,10 @@ Personal agent skills for shaping, planning, implementing, and reviewing feature
 A typical workflow is **shape → plan → step → review**, repeating implementation
 and review for subsequent stages. Each skill can also be used independently.
 
-Each directory contains its `SKILL.md` instructions and `agents/openai.yaml`
-metadata. Feature Plan also includes a [stage template](feature-plan/assets/stage.md).
+Feature Plan includes a [stage template](feature-plan/assets/stage.md).
 
-These skills were copied from the global Codex skills configuration. Keep each
-skill directory intact when copying it into another installation so supporting
-files and relative links remain available.
+## Repository structure
+
+Each skill lives in its own directory with a `SKILL.md` file and any supporting
+assets or metadata. Keep the directory intact when copying a skill manually so
+supporting files and relative links remain available.
