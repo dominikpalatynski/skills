@@ -77,5 +77,7 @@ remains unverified. AI reviewer approval does not replace the user's decision.
 
 State whether findings require changes to the main specification or future stages.
 Put the report in the response; save or publish it only within the requested scope.
-Finish briefly with **Done**, **Verified**, **For your review**, and **Next step**,
-using the user's language. Name one action to take after the review.
+Continue fixes or follow-up work already requested in the conversation; completing
+the review does not require the user to repeat that instruction. For review-only
+requests, finish with the findings and verdict. Respond naturally in the user's
+language, identifying any decision or missing evidence needed to proceed.

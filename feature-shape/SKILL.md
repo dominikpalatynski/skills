@@ -5,8 +5,10 @@ description: Explore a feature idea through conversation, repository analysis, a
 
 # Feature Shape
 
-Help the user understand the problem and choose a direction. Leave room for
-open conversation and deeper examination of a decision before planning delivery.
+Own completion of the user's requested design outcome across turns. Help the
+user understand the problem and choose a direction through a coherent proposal,
+then deepen the parts that need discussion. Follow requests to explore a topic
+further while retaining the broader objective.
 The user's instructions, earlier decisions, and requested scope take precedence
 over this skill's default workflow.
 
@@ -21,10 +23,11 @@ over this skill's default workflow.
    recommend the simplest approach that meets today's supported workflow.
    Future scale, providers, migrations, or reuse need a concrete requirement;
    their possibility alone does not justify building support now.
-4. When asked "how exactly?", trace a concrete path: data, owners, calls,
-   persisted state, and failure behavior. Use an example or small diagram when
-   it helps the user assess the approach. Check current external documentation
-   when a decision depends on a mechanism's actual guarantees.
+4. Proactively explain the mechanism at the level needed to assess the proposal:
+   data, owners, calls, persisted state, lifecycle, and failure behavior. Establish
+   the overall path before drilling into individual details. Use an example or
+   small diagram when helpful. Check current external documentation when a
+   decision depends on a mechanism's actual guarantees.
 5. Establish the smallest useful scope and what belongs later. Turn an unknown
    that could change the architecture into a specific question to investigate,
    and identify the evidence needed to resolve it.
@@ -32,10 +35,17 @@ over this skill's default workflow.
    bounded manual recovery may suffice without automatic recovery. Preserve
    authorization, data integrity, and resource bounds needed by the current flow.
 
-Ask about one meaningful decision at a time, preferably with a recommendation.
-Continue analysis that does not depend on the answer. Resolve routine technical
-details independently. Do not treat silence as acceptance. Keep side ideas in
-a short "Later" section without expanding the current work.
+Ask for a decision when unresolved alternatives materially change the product,
+scope, or accepted trade-offs and the answer cannot be inferred from context.
+Present a concrete recommendation and its consequences, focusing on one decision
+at a time. Resolve technical details independently within the established
+direction; continue work that does not depend on the answer. Do not treat
+silence as acceptance.
+
+After the user answers, continue the outstanding design work. A technical next
+step within the requested outcome is work to perform, not a reason to end the
+turn or ask the user to repeat it as a command. Keep side ideas in a short
+"Later" section without expanding the current work.
 
 ## Brief
 
@@ -55,10 +65,14 @@ additional versions alongside it. Do not add a process log or execution plan.
 
 ## Finish
 
-Present the recommendation and decisions that need the user's input. A brief
-does not itself start implementation. When moving to a specification,
-`$feature-plan` can use the conversation or brief path; it is not a required
-dependency. Preserve any existing authorization for subsequent steps.
+When the requested outcome includes a specification and delivery plan, continue
+into `$feature-plan` once the direction is sufficiently clear, without requiring
+a separate invocation from the user. Use the conversation or brief as input;
+if the skill is unavailable, prepare the requested output directly. For
+exploration-only requests, keep the result within that scope. A brief does not
+itself authorize implementation; preserve any existing authorization for
+subsequent work.
 
-Finish briefly, in the user's language, using these fields: **Done**,
-**Verified**, **For your review**, **Next step**. Name one action in the last field.
+Finish when the requested design outcome is complete or further progress needs
+the user's decision after independent work is exhausted. Respond naturally in
+the user's language with the result and any remaining decision or limitation.

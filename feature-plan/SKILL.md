@@ -8,6 +8,9 @@ description: Create or revise a feature specification and divide it into small s
 Define the contract needed for the current scope and small stages the user can
 assess separately. Preserve earlier decisions and user instructions;
 existing material does not require restarting discovery.
+Carry the requested planning work through to a reviewable specification and
+delivery map. After the user resolves a question, continue the remaining work
+without requiring another instruction to draft contracts or divide the stages.
 
 ## Specification
 
@@ -58,6 +61,12 @@ Name it as a behavior, such as "the file reaches storage", and define its finish
 
 ## Documents and updates
 
+When a specification document is needed, create or update its working skeleton
+after the initial repository and scope checks. Add the known contracts and stage
+map, then refine this same document as the analysis progresses. Mark unresolved
+decisions and experiments at the affected boundaries; finish the independent
+parts without waiting for every detail to be settled.
+
 The main specification owns shared contracts and the delivery map: stage ID,
 actual dependencies, observable goal, and a link to details. Detail only the
 next one to three stages; leave the rest as outlines in the map.
@@ -88,5 +97,7 @@ specification does not imply completed implementation or a verified environment.
 Present the first ready stage for review. An optional separate design review
 can use `$feature-review`; implementation of a selected stage can use
 `$feature-step`. These skills are not required to use the documents.
-Finish with **Done**, **Verified**, **For your review**, and **Next step**,
-using the user's language.
+Continue already requested follow-up work without asking the user to invoke
+another skill. A completed plan alone does not authorize implementation.
+At the requested task boundary, summarize the result, readiness, and any
+remaining decision or missing evidence naturally in the user's language.

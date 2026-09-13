@@ -34,6 +34,12 @@ Skills for exploring ideas and delivering features in small, verifiable stages.
 A typical workflow is **shape → plan → step → review**, repeating implementation
 and review for subsequent stages. Each skill can also be used independently.
 
+When the request includes both design and delivery planning, Feature Shape
+continues into Feature Plan without requiring separate skill invocations.
+The agent develops the proposal and technical details, asking for decisions
+that materially change the product, scope, or accepted trade-offs. Requests
+limited to discussion, review, or one implementation stage retain those boundaries.
+
 Feature Plan includes a [stage template](feature-plan/assets/stage.md).
 
 ## Repository structure

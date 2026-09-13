@@ -51,6 +51,8 @@ Implement the scope together with the required failure guarantees. Make routine
 technical decisions and fixes independently. Return to the user when new evidence
 requires a material change to product behavior, a shared contract, or scope.
 Prepare a concrete recommendation; continue independent work already agreed upon.
+After the user resolves the decision, resume the remaining stage work instead
+of ending with an acknowledgment and another task for the user to trigger.
 
 If the stage proves too large, simplify unnecessary mechanisms before proposing
 the smallest useful split, and explain what has already been done. Do not silently
@@ -89,8 +91,8 @@ is part of the agreed workflow. This skill does not itself authorize additional
 external actions. Provide short instructions on what the user should run or
 inspect and what result to expect. Explain material deviations from the plan.
 
-Finish with **Done**, **Verified**, **For your review**, and **Next step**,
-using the user's language. Link to the change and give one concrete action
-that makes it easy to resume. The default finish line is a verified change
-ready for user review; merging and starting another stage require a separate
-request unless they have already been requested.
+At the requested task boundary, summarize the result and verification naturally
+in the user's language. Link to the change and explain any decision or missing
+evidence needed to proceed. The default finish line is a verified change ready
+for user review; merging and starting another stage require a separate request
+unless they have already been requested.
